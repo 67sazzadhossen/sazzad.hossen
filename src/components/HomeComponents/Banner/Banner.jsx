@@ -96,10 +96,10 @@ const Banner = () => {
       >
         {bannerData.map((data, idx) => (
           <SwiperSlide
-            className="bg-[url('https://img.freepik.com/premium-vector/technology-connection-digital-data-white-background_32996-546.jpg')] bg-cover bg-opacity-50 relative"
+            className="bg-[url('https://github.com/67sazzadhossen/sazzad.hossen/blob/main/src/assets/background.jpg?raw=true')] bg-cover bg-opacity-50 relative"
             key={idx}
           >
-            <div className="bg-white bg-opacity-40">
+            <div className="bg-white bg-opacity-60 backdrop-blur-sm">
               <div className=" min-h-60 md:min-h-96 lg:min-h-[600px] flex flex-col-reverse lg:flex-row items-center lg:max-w-[80%] mx-auto lg:gap-16">
                 <div className="space-y-4 text-center md:text-start px-3 lg:px-0 md:w-2/3">
                   <h4 className="text-xl">{data.name}</h4>
