@@ -91,8 +91,8 @@ const Banner = () => {
             className="lg:bg-[url('https://github.com/67sazzadhossen/sazzad.hossen/blob/main/src/assets/background.jpg?raw=true')] bg-cover bg-opacity-50 relative z-10 px-3 lg:px-0"
             key={idx}
           >
-            <div className="bg-white bg-opacity-60 backdrop-blur-sm h-screen lg:h-[600px] px-12 md:px-24 lg:flex lg:flex-row-reverse lg:justify-between items-center">
-              <div className="mx-auto h-72 w-72 md:h-96 md:w-96 flex justify-center items-center border-[10px] border-black rounded-full">
+            <div className="bg-white bg-opacity-60 backdrop-blur-sm h-screen justify-center lg:h-[600px] px-12 md:px-24 flex flex-col lg:flex-row-reverse lg:justify-between items-center">
+              <div className="mx-auto hidden md:flex h-72 w-72 md:h-96 md:w-96  justify-center items-center border-[10px] border-black rounded-full">
                 <Image
                   className="w-36 md:w-[200px]"
                   src={data.image}
@@ -113,6 +113,9 @@ const Banner = () => {
                     </Link>
                   ))}
                 </div>
+                <Link className="btn btn-outline" href={"/resume"}>
+                  Resume
+                </Link>
               </div>
             </div>
           </SwiperSlide>
