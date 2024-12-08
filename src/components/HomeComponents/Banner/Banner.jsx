@@ -69,7 +69,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="">
+    <div className=" -mt-16 md:-mt-0">
       <Swiper
         cssMode={true}
         navigation={{
