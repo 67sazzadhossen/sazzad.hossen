@@ -69,7 +69,7 @@ const Banner = () => {
   ];
 
   return (
-    <div>
+    <div className="">
       <Swiper
         cssMode={true}
         navigation={{
@@ -84,11 +84,11 @@ const Banner = () => {
         mousewheel={true}
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-        className="mySwiper"
+        className="mySwiper "
       >
         {bannerData.map((data, idx) => (
           <SwiperSlide
-            className="lg:bg-[url('https://github.com/67sazzadhossen/sazzad.hossen/blob/main/src/assets/background.jpg?raw=true')] bg-cover bg-opacity-50 relative px-3 lg:px-0"
+            className="lg:bg-[url('https://github.com/67sazzadhossen/sazzad.hossen/blob/main/src/assets/background.jpg?raw=true')] bg-cover bg-opacity-50 relative z-10 px-3 lg:px-0"
             key={idx}
           >
             <div className="bg-white bg-opacity-60 backdrop-blur-sm h-screen lg:h-[600px] px-12 md:px-24 lg:flex lg:flex-row-reverse items-center">
