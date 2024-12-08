@@ -60,7 +60,9 @@ const Banner = () => {
       ],
     },
     {
-      title: "Botox & Fillers",
+      title: "Technologies",
+      description:
+        "As a full-stack web developer, I specialize in building powerful applications using the MERN stack (MongoDB, Express, React, Node.js). With React and Next.js, I create dynamic, SEO-friendly UIs, while leveraging the backend capabilities of Node.js and MongoDB for fast, scalable solutions",
       image:
         "https://www.schmidtplasticsurgery.com/wp-content/uploads/2021/04/shutterstock_233707033-1920x1029.jpg",
     },
