@@ -77,10 +77,10 @@ const Banner = () => {
           nextEl: ".custom-next",
         }}
         pagination={{ clickable: true }} // Ensure pagination is clickable
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // }}
         mousewheel={true}
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
@@ -91,7 +91,7 @@ const Banner = () => {
             className="lg:bg-[url('https://github.com/67sazzadhossen/sazzad.hossen/blob/main/src/assets/background.jpg?raw=true')] bg-cover bg-opacity-50 relative px-3 lg:px-0"
             key={idx}
           >
-            <div className="bg-white bg-opacity-60 backdrop-blur-sm h-screen px-12 md:px-24">
+            <div className="bg-white bg-opacity-60 backdrop-blur-sm h-screen lg:h-[600px] px-12 md:px-24 lg:flex lg:flex-row-reverse items-center">
               <div>
                 <Image
                   src={data.image}
@@ -100,19 +100,18 @@ const Banner = () => {
                   height={600}
                 ></Image>
               </div>
-              <div>
+              <div className="space-y-4 lg:w-2/3">
                 <h4 className="text-xl">{data.name}</h4>
-                <h1 className="text-3xl font-bold">{data.title}</h1>
-                <p>{data.description}</p>
-              </div>
-
-              <div className="divider divider-neutral w-16"></div>
-              <div className="flex  text-4xl gap-4">
-                {data?.contact?.map((item, idx) => (
-                  <Link key={idx} href={item.link}>
-                    {item.icon}
-                  </Link>
-                ))}
+                <h1 className="text-3xl lg:text-6xl font-bold">{data.title}</h1>
+                <p className="lg:pr-56">{data.description}</p>
+                <div className="divider divider-neutral w-16"></div>
+                <div className="flex  text-4xl gap-4">
+                  {data?.contact?.map((item, idx) => (
+                    <Link key={idx} href={item.link}>
+                      {item.icon}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </SwiperSlide>
