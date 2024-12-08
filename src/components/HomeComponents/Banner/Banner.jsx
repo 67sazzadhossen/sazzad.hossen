@@ -17,14 +17,47 @@ import {
 } from "swiper/modules";
 
 // Import React Icons
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiOutlineLeft,
+  AiOutlineRight,
+} from "react-icons/ai";
+import Image from "next/image";
+import { MdEmail, MdFacebook } from "react-icons/md";
+import Link from "next/link";
 
 const Banner = () => {
   const bannerData = [
     {
-      title: "Laser Skin Resurfacing",
+      name: "Md Sazzad Hossen",
+      title: "Full Stack Web Developer",
+      description:
+        "Hi, I'm Sazzad Hossen – a passionate Full Stack Web Developer with expertise in creating dynamic, responsive, and scalable web applications. From frontend frameworks like React to backend solutions with Node.js, I deliver high-quality, user-centric solutions. Let's build something amazing together!",
       image:
-        "https://www.datocms-assets.com/101452/1688062686-laser-skin-resurfacing-banner.jpg?auto=format,compress&w=2200",
+        "https://github.com/67sazzadhossen/sazzad.hossen/blob/main/src/assets/profile_transparent.png?raw=true",
+      contact: [
+        {
+          icon: <MdEmail />,
+          name: "Email",
+          link: "mailto:sazzadhossen010@gmail.com",
+        },
+        {
+          icon: <AiFillGithub />,
+          name: "Github",
+          link: "https://github.com/67sazzadhossen",
+        },
+        {
+          icon: <AiFillLinkedin />,
+          name: "LinkedIn",
+          link: "https://www.linkedin.com/in/67sazzadhossen/",
+        },
+        {
+          icon: <MdFacebook />,
+          name: "Facebook",
+          link: "https://www.facebook.com/sazzad.hossen19/",
+        },
+      ],
     },
     {
       title: "Botox & Fillers",
@@ -52,18 +85,46 @@ const Banner = () => {
           nextEl: ".custom-next",
         }}
         pagination={{ clickable: true }} // Ensure pagination is clickable
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // }}
         mousewheel={true}
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
         className="mySwiper"
       >
         {bannerData.map((data, idx) => (
-          <SwiperSlide key={idx}>
-            <div className="hero min-h-60 md:min-h-96 lg:min-h-[600px]"></div>
+          <SwiperSlide
+            className="bg-[url('https://img.freepik.com/premium-vector/technology-connection-digital-data-white-background_32996-546.jpg')] bg-cover bg-opacity-50 relative"
+            key={idx}
+          >
+            <div className="bg-white bg-opacity-40">
+              <div className=" min-h-60 md:min-h-96 lg:min-h-[600px] flex flex-col-reverse lg:flex-row items-center lg:max-w-[80%] mx-auto lg:gap-16">
+                <div className="space-y-4 text-center md:text-start px-3 lg:px-0 md:w-2/3">
+                  <h4 className="text-xl">{data.name}</h4>
+                  <h1 className="md:text-5xl text-3xl font-bold">
+                    {data.title}
+                  </h1>
+                  <h1>{data.description}</h1>
+                  <div className="divider divider-neutral w-16"></div>
+                  <div className="flex text-4xl gap-4">
+                    {data?.contact?.map((item, idx) => (
+                      <Link key={idx} href={item.link}>
+                        {item.icon}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <Image
+                  className=""
+                  src={data.image}
+                  alt="profile"
+                  width={600}
+                  height={300}
+                ></Image>
+              </div>
+            </div>
           </SwiperSlide>
         ))}
 

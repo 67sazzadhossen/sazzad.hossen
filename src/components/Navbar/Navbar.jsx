@@ -4,6 +4,8 @@ import logo from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Change this to import from next/navigation
+import { MdEmail, MdFacebook } from "react-icons/md";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false); // State to toggle the mobile menu
@@ -19,12 +21,34 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
     { name: "Resume", path: "/resume", optional: true },
   ];
+  const social = [
+    {
+      icon: <MdEmail />,
+      name: "Email",
+      link: "mailto:sazzadhossen010@gmail.com",
+    },
+    {
+      icon: <AiFillGithub />,
+      name: "Github",
+      link: "https://github.com/67sazzadhossen",
+    },
+    {
+      icon: <AiFillLinkedin />,
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/67sazzadhossen/",
+    },
+    {
+      icon: <MdFacebook />,
+      name: "Facebook",
+      link: "https://www.facebook.com/sazzad.hossen19/",
+    },
+  ];
 
   const pathname = usePathname(); // Hook to track the active route
   console.log(pathname);
 
   return (
-    <nav className="bg-gradient-to-r from-blue-200 to-purple-300  px-6 py-4 flex justify-between items-center backdrop-blur-md ">
+    <nav className=" px-6 py-4 flex justify-between items-center backdrop-blur-md ">
       {/* Logo */}
       <div className="flex items-center">
         <Image
@@ -58,6 +82,14 @@ const Navbar = () => {
             </li>
           );
         })}
+      </ul>
+
+      <ul className="flex gap-4 text-2xl">
+        {social.map((item, idx) => (
+          <li key={idx}>
+            <Link href={item.link}>{item.icon}</Link>
+          </li>
+        ))}
       </ul>
 
       {/* Mobile Menu Button */}
