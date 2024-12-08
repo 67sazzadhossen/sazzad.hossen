@@ -1,3 +1,35 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": ["react", "unused-imports"],
+  "rules": {
+    // Warn about unused variables (including props and state)
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",                      // Warns on all unused variables (let, const, etc.)
+        "args": "after-used",               // Warns on unused function arguments only after they're used
+        "ignoreRestSiblings": false,        // Don't ignore unused properties in object destructuring
+        "varsIgnorePattern": "^_"           // Ignore variables starting with "_", a common convention for unused variables
+      }
+    ],
+
+    // Warn about missing or unused props (if you're using prop-types)
+    "react/prop-types": ["warn"],         // Warn about missing or unused props in prop types (if using prop types)
+
+    // JSX-specific rules for Next.js
+    "react/jsx-uses-react": "warn",       // Warns when React is not used, but JSX is present
+    "react/jsx-uses-vars": "warn",        // Warns about unused variables in JSX (e.g., props)
+
+    // Warn about unused imports
+    "unused-imports/no-unused-imports": "warn", // Warns about unused imports
+    
+    // Warn about unused variables within imports
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all"                     // Warns about unused variables in imports (e.g., components, functions)
+        // "args": "none"                       // Don't warn about unused arguments in imports
+      }
+    ]
+  }
 }
