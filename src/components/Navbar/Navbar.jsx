@@ -4,7 +4,7 @@ import logo from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Change this to import from next/navigation
-import { MdEmail, MdFacebook } from "react-icons/md";
+import { MdEmail, MdFacebook, MdMenu } from "react-icons/md";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 const Navbar = () => {
@@ -48,7 +48,7 @@ const Navbar = () => {
   console.log(pathname);
 
   return (
-    <nav className=" px-6 py-4 flex justify-between items-center backdrop-blur-md ">
+    <nav className=" md:px-6 px-2 py-4 flex justify-between items-center backdrop-blur-md">
       {/* Logo */}
       <div className="flex items-center">
         <Image
@@ -58,8 +58,8 @@ const Navbar = () => {
           height={28}
           className="transition-transform transform hover:scale-110" // Logo hover effect
         />
-        <div className="divider divider-neutral lg:divider-horizontal"></div>
-        <div className="uppercase text-3xl font-extrabold tracking-wide">
+        <div className="divider divider-neutral divider-horizontal"></div>
+        <div className="uppercase text-xl md:text-3xl font-extrabold tracking-wide">
           Sazzad
         </div>
       </div>
@@ -84,7 +84,7 @@ const Navbar = () => {
         })}
       </ul>
 
-      <ul className="flex gap-4 text-2xl">
+      <ul className=" gap-4 text-2xl hidden md:flex">
         {social.map((item, idx) => (
           <li key={idx}>
             <Link href={item.link}>{item.icon}</Link>
@@ -94,22 +94,8 @@ const Navbar = () => {
 
       {/* Mobile Menu Button */}
       <div className="md:hidden">
-        <button onClick={() => setMenuOpen(!menuOpen)} className="text-white">
-          {/* Mobile icon (can replace with an icon component like Hamburger icon) */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+        <button onClick={() => setMenuOpen(!menuOpen)} className="">
+          <MdMenu />
         </button>
       </div>
     </nav>

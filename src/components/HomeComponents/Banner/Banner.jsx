@@ -91,44 +91,38 @@ const Banner = () => {
             className="lg:bg-[url('https://github.com/67sazzadhossen/sazzad.hossen/blob/main/src/assets/background.jpg?raw=true')] bg-cover bg-opacity-50 relative px-3 lg:px-0"
             key={idx}
           >
-            <div className="bg-white bg-opacity-60 backdrop-blur-sm">
-              <div className=" min-h-screen md:min-h-96 lg:min-h-[600px] flex flex-col-reverse lg:flex-row items-center lg:max-w-[80%] mx-auto lg:gap-16">
-                <div className="space-y-4 text-center md:text-start px-3 lg:px-0 md:w-2/3">
-                  <h4 className="text-xl">{data.name}</h4>
-                  <h1 className="md:text-5xl text-3xl font-bold">
-                    {data.title}
-                  </h1>
-                  <h1>{data.description}</h1>
-                  <div className="divider divider-neutral w-16"></div>
-                  <div className="flex text-4xl gap-4">
-                    {data?.contact?.map((item, idx) => (
-                      <Link key={idx} href={item.link}>
-                        {item.icon}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+            <div className="bg-white bg-opacity-60 backdrop-blur-sm h-screen px-12 md:px-24">
+              <div>
                 <Image
-                  className={`${
-                    data.title === "Technologies"
-                      ? "lg:border lg:rounded-full border-gray-300"
-                      : ""
-                  } lg:w-1/3 `}
                   src={data.image}
-                  alt="profile"
-                  width={data.title === "Technologies" ? 1200 : 600}
-                  height={300}
+                  alt={data.title}
+                  width={600}
+                  height={600}
                 ></Image>
+              </div>
+              <div>
+                <h4 className="text-xl">{data.name}</h4>
+                <h1 className="text-3xl font-bold">{data.title}</h1>
+                <p>{data.description}</p>
+              </div>
+
+              <div className="divider divider-neutral w-16"></div>
+              <div className="flex  text-4xl gap-4">
+                {data?.contact?.map((item, idx) => (
+                  <Link key={idx} href={item.link}>
+                    {item.icon}
+                  </Link>
+                ))}
               </div>
             </div>
           </SwiperSlide>
         ))}
 
         {/* Custom Navigation Buttons */}
-        <div className="custom-prev absolute top-1/2 left-4 z-10 bg-transparent cursor-pointer transform -translate-y-1/2  btn btn-circle btn-sm ">
+        <div className="custom-prev absolute top-1/2 left-4 z-10 bg-transparent cursor-pointer transform -translate-y-1/2 btn btn-circle btn-sm">
           <AiOutlineLeft size={20} />
         </div>
-        <div className="custom-next absolute top-1/2 right-4 z-10 bg-transparent cursor-pointer transform -translate-y-1/2   btn btn-circle btn-sm ">
+        <div className="custom-next absolute top-1/2 right-4 z-10 bg-transparent cursor-pointer transform -translate-y-1/2 btn btn-circle btn-sm">
           <AiOutlineRight size={20} />
         </div>
       </Swiper>
