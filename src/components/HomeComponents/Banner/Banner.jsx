@@ -88,7 +88,7 @@ const Banner = () => {
       >
         {bannerData.map((data, idx) => (
           <SwiperSlide
-            className="lg:bg-[url('https://github.com/67sazzadhossen/sazzad.hossen/blob/main/src/assets/background.jpg?raw=true')] bg-cover bg-opacity-50 relative z-10 px-3 lg:px-0"
+            className="lg:bg-[url('https://github.com/67sazzadhossen/sazzad.hossen/blob/main/src/assets/background.jpg?raw=true')] bg-cover bg-opacity-50 relative z-10 px-3 lg:px-0 "
             key={idx}
           >
             <div className="bg-white bg-opacity-60 backdrop-blur-sm h-screen justify-center lg:h-[600px] px-12 md:px-24 flex flex-col lg:flex-row-reverse lg:justify-between items-center">
@@ -101,7 +101,7 @@ const Banner = () => {
                   height={200}
                 ></Image>
               </div>
-              <div className="space-y-4 lg:w-2/3 mt-6 lg:mt-0">
+              <div className="space-y-4 lg:w-2/3 md:mt-6 lg:mt-0 ">
                 <h4 className="text-xl">{data.name}</h4>
                 <h1 className="text-3xl lg:text-6xl font-bold">{data.title}</h1>
                 <p className="">{data.description}</p>
