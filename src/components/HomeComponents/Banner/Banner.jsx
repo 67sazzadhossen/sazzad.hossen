@@ -64,7 +64,7 @@ const Banner = () => {
       description:
         "As a full-stack web developer, I specialize in building powerful applications using the MERN stack (MongoDB, Express, React, Node.js). With React and Next.js, I create dynamic, SEO-friendly UIs, while leveraging the backend capabilities of Node.js and MongoDB for fast, scalable solutions",
       image:
-        "https://www.schmidtplasticsurgery.com/wp-content/uploads/2021/04/shutterstock_233707033-1920x1029.jpg",
+        "https://github.com/67sazzadhossen/sazzad.hossen/blob/main/src/assets/technologies.png?raw=true",
     },
     {
       title: "Coolsculpting",
@@ -122,7 +122,7 @@ const Banner = () => {
                   className=""
                   src={data.image}
                   alt="profile"
-                  width={600}
+                  width={data.title === "Technologies" ? 800 : 600}
                   height={300}
                 ></Image>
               </div>
