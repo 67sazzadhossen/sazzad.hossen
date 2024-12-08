@@ -66,16 +66,6 @@ const Banner = () => {
       image:
         "https://github.com/67sazzadhossen/sazzad.hossen/blob/main/src/assets/technologies.png?raw=true",
     },
-    {
-      title: "Coolsculpting",
-      image:
-        "https://revivalaestheticsandwellness.com/wp-content/uploads/2022/10/coolsculpting_1920.jpg",
-    },
-    {
-      title: "Hair Restoration",
-      image:
-        "https://irp.cdn-website.com/bc408738/dms3rep/multi/shutterstock_1612411981.jpg",
-    },
   ];
 
   return (
@@ -87,10 +77,10 @@ const Banner = () => {
           nextEl: ".custom-next",
         }}
         pagination={{ clickable: true }} // Ensure pagination is clickable
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         mousewheel={true}
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
@@ -119,10 +109,14 @@ const Banner = () => {
                   </div>
                 </div>
                 <Image
-                  className=""
+                  className={`${
+                    data.title === "Technologies"
+                      ? "border rounded-full border-gray-300"
+                      : ""
+                  } w-1/3 `}
                   src={data.image}
                   alt="profile"
-                  width={data.title === "Technologies" ? 800 : 600}
+                  width={data.title === "Technologies" ? 1200 : 600}
                   height={300}
                 ></Image>
               </div>
