@@ -16,8 +16,8 @@ const Navbar = () => {
     { name: "Projects", path: "/projects" },
     { name: "Skills", path: "/skills" },
     { name: "Experience", path: "/experience" },
-    { name: "Blog", path: "/blog", optional: true },
-    { name: "Testimonials", path: "/testimonials", optional: true },
+    // { name: "Blog", path: "/blog", optional: true },
+    // { name: "Testimonials", path: "/testimonials", optional: true },
     { name: "Contact", path: "/contact" },
     { name: "Resume", path: "/resume", optional: true },
   ];
@@ -49,7 +49,7 @@ const Navbar = () => {
   console.log(pathname);
 
   return (
-    <nav className="md:px-6 px-2 py-4 flex justify-between items-center backdrop-blur-md relative z-30">
+    <nav className="md:px-24 px-2 py-4 flex justify-between items-center backdrop-blur-md relative z-30">
       {/* Logo */}
       <div className="flex items-center">
         <Image
