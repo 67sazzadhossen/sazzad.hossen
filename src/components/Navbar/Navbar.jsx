@@ -52,19 +52,21 @@ const Navbar = () => {
   return (
     <nav className="md:px-24 px-2 py-4 flex justify-between items-center backdrop-blur-md relative z-30">
       {/* Logo */}
-      <div className="flex items-center">
-        <Image
-          src={logo}
-          alt="logo"
-          width={28}
-          height={28}
-          className="transition-transform transform hover:scale-110" // Logo hover effect
-        />
-        <div className="divider divider-neutral divider-horizontal mx-2"></div>
-        <div className="uppercase text-xl md:text-3xl font-extrabold tracking-wide">
-          Sazzad
+      <Link href={"/"}>
+        <div className="flex items-center">
+          <Image
+            src={logo}
+            alt="logo"
+            width={28}
+            height={28}
+            className="transition-transform transform hover:scale-110" // Logo hover effect
+          />
+          <div className="divider divider-neutral divider-horizontal mx-2"></div>
+          <div className="uppercase text-xl md:text-3xl font-extrabold tracking-wide">
+            Sazzad
+          </div>
         </div>
-      </div>
+      </Link>
 
       {/* Navigation Links */}
       <ul className="gap-16 hidden lg:flex">
