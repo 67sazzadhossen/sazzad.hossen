@@ -16,8 +16,6 @@ const Navbar = () => {
     { name: "Projects", path: "/projects" },
     { name: "Skills", path: "/skills" },
     { name: "Experience", path: "/experience" },
-    // { name: "Blog", path: "/blog", optional: true },
-    // { name: "Testimonials", path: "/testimonials", optional: true },
     { name: "Contact", path: "/contact" },
     { name: "Resume", path: "/resume", optional: true },
   ];
@@ -46,7 +44,10 @@ const Navbar = () => {
   ];
 
   const pathname = usePathname(); // Hook to track the active route
-  console.log(pathname);
+
+  const handleLinkClick = () => {
+    setMenuOpen(false); // Close the mobile menu when a link is clicked
+  };
 
   return (
     <nav className="md:px-24 px-2 py-4 flex justify-between items-center backdrop-blur-md relative z-30">
@@ -77,6 +78,7 @@ const Navbar = () => {
                 className={`hover:text-blue-400 transition-colors ${
                   isActive ? "text-blue-800" : ""
                 }`}
+                onClick={handleLinkClick} // Close the menu on click
               >
                 {link.name}
               </Link>
@@ -122,6 +124,7 @@ const Navbar = () => {
                   ? "bg-blue-50 text-blue-600"
                   : "hover:bg-blue-50"
               }`}
+              onClick={handleLinkClick} // Close the menu on click
             >
               {link.name}
             </Link>
